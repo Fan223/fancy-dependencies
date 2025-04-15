@@ -50,11 +50,13 @@
     <properties>
         <java.version>21</java.version>
         <encode.version>UTF-8</encode.version>
-        <maven.compiler.source>${java.version}</maven.compiler.source>
-        <maven.compiler.target>${java.version}</maven.compiler.target>
+        <!-- 指定 Java 编译目标平台版本的标准方式 -->
         <maven.compiler.release>${java.version}</maven.compiler.release>
+        <!-- 指定编译时 Java 源文件的默认编码 -->
         <maven.compiler.encoding>${encode.version}</maven.compiler.encoding>
+        <!-- 指定构建过程中的源码文件编码 -->
         <project.build.sourceEncoding>${encode.version}</project.build.sourceEncoding>
+        <!-- 指定生成的 Maven 报告输出的编码 -->
         <project.reporting.outputEncoding>${encode.version}</project.reporting.outputEncoding>
 
         <spring-boot.version>3.4.4</spring-boot.version>
