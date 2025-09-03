@@ -1,0 +1,338 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <!-- 项目 POM 模型版本 -->
+    <modelVersion>4.0.0</modelVersion>
+    <!-- 项目组织标识 -->
+    <groupId>fan</groupId>
+    <!-- 项目唯一标识 -->
+    <artifactId>fancy-dependencies</artifactId>
+    <!-- 项目版本号 -->
+    <version>2.2.0</version>
+    <!-- 项目打包方式 -->
+    <packaging>pom</packaging>
+
+    <!-- 项目名称 -->
+    <name>fancy-dependencies</name>
+    <!-- 项目描述 -->
+    <description>Unified top-level dependency management.</description>
+    <!-- 项目主页 -->
+    <url>https://github.com/Fan223/fancy-dependencies</url>
+    <!-- 项目创始年份 -->
+    <inceptionYear>2022</inceptionYear>
+    <!-- 项目许可证信息 -->
+    <licenses>
+        <license/>
+    </licenses>
+
+    <!-- 项目开发者信息 -->
+    <developers>
+        <developer>
+            <id>Fan</id>
+            <name>Fancy</name>
+            <email>fanj.zh@foxmail.com</email>
+            <url>https://fan223.cn</url>
+        </developer>
+    </developers>
+    <!-- 项目版本控制系统信息 -->
+    <scm>
+        <!-- 仓库连接地址 -->
+        <connection>scm:git:https://github.com/Fan223/fancy-dependencies.git</connection>
+        <!-- 仓库开发者连接地址 -->
+        <developerConnection>scm:git:git@github.com:Fan223/fancy-dependencies.git</developerConnection>
+        <!-- 仓库页面地址 -->
+        <url>https://github.com/Fan223/fancy-dependencies</url>
+        <tag/>
+    </scm>
+
+    <!-- 定义变量 -->
+    <properties>
+        <java.version>21</java.version>
+        <encode.version>UTF-8</encode.version>
+        <!-- 指定 Java 编译目标平台版本标准 -->
+        <maven.compiler.release>${java.version}</maven.compiler.release>
+        <!-- 指定编译时 Java 源文件编码 -->
+        <maven.compiler.encoding>${encode.version}</maven.compiler.encoding>
+        <!-- 指定构建过程中源码文件编码 -->
+        <project.build.sourceEncoding>${encode.version}</project.build.sourceEncoding>
+        <!-- 指定生成 Maven 报告输出编码 -->
+        <project.reporting.outputEncoding>${encode.version}</project.reporting.outputEncoding>
+
+        <spring-boot.version>3.5.5</spring-boot.version>
+        <spring-cloud.version>2025.0.0</spring-cloud.version>
+        <spring-cloud-alibaba.version>2023.0.3.3</spring-cloud-alibaba.version>
+        <dubbo.version>3.3.5</dubbo.version>
+        <jackson.version>2.20.0</jackson.version>
+
+        <lombok.version>1.18.38</lombok.version>
+        <mapstruct.version>1.6.3</mapstruct.version>
+        <mysql.version>9.4.0</mysql.version>
+        <mybatis-plus.version>3.5.14</mybatis-plus.version>
+        <dynamic-datasource.version>4.3.1</dynamic-datasource.version>
+        <p6spy.version>1.12.0</p6spy.version>
+        <druid.version>1.2.27</druid.version>
+
+        <caffeine.version>3.2.2</caffeine.version>
+        <redisson.version>3.51.0</redisson.version>
+        <spring-kafka.version>4.0.0-M4</spring-kafka.version>
+        <xxl-job.version>3.2.0</xxl-job.version>
+        <curator.version>5.9.0</curator.version>
+
+        <netty.version>4.2.4.Final</netty.version>
+        <geoip2.version>4.4.0</geoip2.version>
+        <fastexcel.version>1.3.0</fastexcel.version>
+        <disruptor.version>4.4.0</disruptor.version>
+        <ql-express.version>3.3.4</ql-express.version>
+        <bootstrap.version>5.3.8</bootstrap.version>
+
+        <guava.version>33.4.8-jre</guava.version>
+        <hutool.version>5.8.40</hutool.version>
+        <commons-io.version>2.20.0</commons-io.version>
+        <commons-lang3.version>3.18.0</commons-lang3.version>
+        <kryo.version>5.6.2</kryo.version>
+        <cglib.version>3.3.0</cglib.version>
+
+        <maven-source-plugin.version>3.3.1</maven-source-plugin.version>
+    </properties>
+
+    <!-- 统一管理依赖版本 -->
+    <dependencyManagement>
+        <!-- 声明项目依赖 -->
+        <dependencies>
+            <!-- Spring Boot Dependencies -->
+            <dependency>
+                <groupId>org.springframework.boot</groupId>
+                <artifactId>spring-boot-dependencies</artifactId>
+                <version>${spring-boot.version}</version>
+                <!-- 依赖的打包格式 -->
+                <type>pom</type>
+                <!-- 依赖的作用范围 -->
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Cloud Dependencies -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>${spring-cloud.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Spring Cloud Alibaba Dependencies -->
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>${spring-cloud-alibaba.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Dubbo BOM -->
+            <dependency>
+                <groupId>org.apache.dubbo</groupId>
+                <artifactId>dubbo-bom</artifactId>
+                <version>${dubbo.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <!-- Jackson BOM -->
+            <dependency>
+                <groupId>com.fasterxml.jackson</groupId>
+                <artifactId>jackson-bom</artifactId>
+                <version>${jackson.version}</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+
+            <!-- Project Lombok -->
+            <dependency>
+                <groupId>org.projectlombok</groupId>
+                <artifactId>lombok</artifactId>
+                <version>${lombok.version}</version>
+            </dependency>
+            <!-- MapStruct Core -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <!-- MapStruct Processor -->
+            <dependency>
+                <groupId>org.mapstruct</groupId>
+                <artifactId>mapstruct-processor</artifactId>
+                <version>${mapstruct.version}</version>
+            </dependency>
+            <!-- MySQL Connector/J -->
+            <dependency>
+                <groupId>com.mysql</groupId>
+                <artifactId>mysql-connector-j</artifactId>
+                <version>${mysql.version}</version>
+            </dependency>
+            <!-- MyBatis-Plus -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-spring-boot3-starter</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-jsqlparser</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- MyBatis-Plus Generator -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>mybatis-plus-generator</artifactId>
+                <version>${mybatis-plus.version}</version>
+            </dependency>
+            <!-- Dynamic Datasource Spring Boot Starter -->
+            <dependency>
+                <groupId>com.baomidou</groupId>
+                <artifactId>dynamic-datasource-spring-boot-starter</artifactId>
+                <version>${dynamic-datasource.version}</version>
+            </dependency>
+            <!-- P6Spy Spring Boot Starter -->
+            <dependency>
+                <groupId>com.github.gavlyukovskiy</groupId>
+                <artifactId>p6spy-spring-boot-starter</artifactId>
+                <version>${p6spy.version}</version>
+            </dependency>
+            <!-- Druid Spring Boot 3 Starter -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>druid-spring-boot-3-starter</artifactId>
+                <version>${druid.version}</version>
+            </dependency>
+
+            <!-- Caffeine Cache -->
+            <dependency>
+                <groupId>com.github.ben-manes.caffeine</groupId>
+                <artifactId>caffeine</artifactId>
+                <version>${caffeine.version}</version>
+            </dependency>
+            <!-- Redisson/Spring Boot Starter -->
+            <dependency>
+                <groupId>org.redisson</groupId>
+                <artifactId>redisson-spring-boot-starter</artifactId>
+                <version>${redisson.version}</version>
+            </dependency>
+            <!-- Spring Kafka Support -->
+            <dependency>
+                <groupId>org.springframework.kafka</groupId>
+                <artifactId>spring-kafka</artifactId>
+                <version>${spring-kafka.version}</version>
+            </dependency>
+            <!-- XXL Job Core -->
+            <dependency>
+                <groupId>com.xuxueli</groupId>
+                <artifactId>xxl-job-core</artifactId>
+                <version>${xxl-job.version}</version>
+            </dependency>
+            <!-- Curator Framework -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-framework</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <!-- Curator Client -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-client</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+            <!-- Curator Recipes -->
+            <dependency>
+                <groupId>org.apache.curator</groupId>
+                <artifactId>curator-recipes</artifactId>
+                <version>${curator.version}</version>
+            </dependency>
+
+            <!-- Netty/All In One -->
+            <dependency>
+                <groupId>io.netty</groupId>
+                <artifactId>netty-all</artifactId>
+                <version>${netty.version}</version>
+            </dependency>
+            <!-- MaxMind GeoIP2 API -->
+            <dependency>
+                <groupId>com.maxmind.geoip2</groupId>
+                <artifactId>geoip2</artifactId>
+                <version>${geoip2.version}</version>
+            </dependency>
+            <!-- FastExcel -->
+            <dependency>
+                <groupId>cn.idev.excel</groupId>
+                <artifactId>fastexcel</artifactId>
+                <version>${fastexcel.version}</version>
+            </dependency>
+            <!-- Disruptor Framework -->
+            <dependency>
+                <groupId>com.lmax</groupId>
+                <artifactId>disruptor</artifactId>
+                <version>${disruptor.version}</version>
+            </dependency>
+            <!-- QLExpress -->
+            <dependency>
+                <groupId>com.alibaba</groupId>
+                <artifactId>QLExpress</artifactId>
+                <version>${ql-express.version}</version>
+            </dependency>
+            <!-- Bootstrap -->
+            <dependency>
+                <groupId>org.webjars</groupId>
+                <artifactId>bootstrap</artifactId>
+                <version>${bootstrap.version}</version>
+            </dependency>
+
+            <!-- Guava: Google Core Libraries For Java -->
+            <dependency>
+                <groupId>com.google.guava</groupId>
+                <artifactId>guava</artifactId>
+                <version>${guava.version}</version>
+            </dependency>
+            <!-- HuTool BOM -->
+            <dependency>
+                <groupId>cn.hutool</groupId>
+                <artifactId>hutool-bom</artifactId>
+                <version>${hutool.version}</version>
+            </dependency>
+            <!-- Apache Commons IO -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+                <version>${commons-io.version}</version>
+            </dependency>
+            <!-- Apache Commons Lang -->
+            <dependency>
+                <groupId>org.apache.commons</groupId>
+                <artifactId>commons-lang3</artifactId>
+                <version>${commons-lang3.version}</version>
+            </dependency>
+            <!-- Kryo -->
+            <dependency>
+                <groupId>com.esotericsoftware</groupId>
+                <artifactId>kryo</artifactId>
+                <version>${kryo.version}</version>
+            </dependency>
+            <!-- CGLib -->
+            <dependency>
+                <groupId>cglib</groupId>
+                <artifactId>cglib</artifactId>
+                <version>${cglib.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+    <build>
+        <!-- 统一管理插件版本 -->
+        <pluginManagement>
+            <!-- 声明项目插件 -->
+            <plugins>
+                <!-- Apache Maven Source Plugin -->
+                <plugin>
+                    <groupId>org.apache.maven.plugins</groupId>
+                    <artifactId>maven-source-plugin</artifactId>
+                    <version>${maven-source-plugin.version}</version>
+                </plugin>
+            </plugins>
+        </pluginManagement>
+    </build>
+</project>
