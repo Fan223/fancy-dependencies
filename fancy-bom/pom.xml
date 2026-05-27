@@ -32,7 +32,7 @@
 
         <caffeine.version>3.2.3</caffeine.version>
         <redisson.version>4.3.0</redisson.version>
-        <admin.version>4.0.2</admin.version>
+        <admin.version>4.0.4</admin.version>
         <xxl-job.version>3.3.2</xxl-job.version>
         <curator.version>5.9.0</curator.version>
 
