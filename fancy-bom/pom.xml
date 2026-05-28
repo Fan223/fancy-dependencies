@@ -43,7 +43,7 @@
         <bootstrap.version>5.3.8</bootstrap.version>
         <disruptor.version>4.0.0</disruptor.version>
 
-        <guava.version>33.5.0-jre</guava.version>
+        <guava.version>33.6.0-jre</guava.version>
         <commons-lang3.version>3.20.0</commons-lang3.version>
         <kryo.version>5.6.2</kryo.version>
         <cglib.version>3.3.0</cglib.version>
