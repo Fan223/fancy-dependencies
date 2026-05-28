@@ -39,7 +39,7 @@
         <fastexcel.version>1.3.0</fastexcel.version>
         <ql-express.version>3.3.4</ql-express.version>
         <netty.version>4.2.12.Final</netty.version>
-        <geoip2.version>5.0.2</geoip2.version>
+        <geoip2.version>5.1.0</geoip2.version>
         <bootstrap.version>5.3.8</bootstrap.version>
         <disruptor.version>4.0.0</disruptor.version>
 
